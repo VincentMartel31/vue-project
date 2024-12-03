@@ -37,6 +37,13 @@ h1 {
     color: red;
 }
 
+h2 {
+    font-size: 2.2em;
+    line-height: 2.2;
+    text-align: left;
+    color: blueviolet;
+}
+
 button {
     border-radius: 8px;
     border: 1px solid transparent;
