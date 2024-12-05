@@ -48,6 +48,11 @@
                                 >
                             </li>
                             <li>
+                                <router-link class="watchers" to="/watchers"
+                                    >Watchers</router-link
+                                >
+                            </li>
+                            <li>
                                 <a class="dropdown-item" href="#"
                                     >Présentation</a
                                 >
@@ -195,8 +200,10 @@
                                 <a class="dropdown-item" href="#">Watchers</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#"
-                                    >Dynamic Styling</a
+                                <router-link
+                                    class="dropdown-item"
+                                    to="/dynamicstyling"
+                                    >Dynamic Styling</router-link
                                 >
                             </li>
                             <li>
@@ -247,6 +254,13 @@
                                     class="dropdown-item"
                                     to="/tpdatabinding"
                                     >TP-Databinding</router-link
+                                >
+                            </li>
+                            <li>
+                                <router-link
+                                    class="dropdown-item"
+                                    to="/reactivite"
+                                    >TP-Reactivité</router-link
                                 >
                             </li>
                             <li>

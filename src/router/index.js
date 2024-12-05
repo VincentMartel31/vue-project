@@ -34,8 +34,23 @@ const router = createRouter({
 
         {
             path: "/tpeventbinding",
-            name: "Ntpeventbinding",
+            name: "tpeventbinding",
             component: () => import("../views/tp/tpeventbinding.vue"),
+        },
+        {
+            path: "/watchers",
+            name: "watchers",
+            component: () => import("../views/lessons/watchers.vue"),
+        },
+        {
+            path: "/reactivite",
+            name: "reactivite",
+            component: () => import("../views/tp/reactivite.vue"),
+        },
+        {
+            path: "/dynamicstyling",
+            name: "dynamicstyling",
+            component: () => import("../views/exo/dynamicstyling.vue"),
         },
     ],
 });
