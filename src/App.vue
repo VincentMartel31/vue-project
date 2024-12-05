@@ -1,20 +1,17 @@
 <script setup>
-import HelloWorld from "./components/HelloWorld.vue";
+import { RouterView } from "vue-router";
+
+import NavBar from "./components/shared/NavBar.vue";
+import Footer from "./components/shared/Footer.vue";
 </script>
 
 <template>
-    <div>
-        <a href="https://vite.dev" target="_blank">
-            <img src="/vite.svg" class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://vuejs.org/" target="_blank">
-            <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-        </a>
-    </div>
-    <HelloWorld msg="Vite + Vue" />
-    <h1>titre</h1>
-    <h2>titre deux</h2>
+    <NavBar></NavBar>
+    <router-view class="min-vh-100"></router-view>
+    <Footer></Footer>
 </template>
+
+<style scoped></style>
 
 <style scoped>
 .logo {
