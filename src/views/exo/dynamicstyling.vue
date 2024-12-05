@@ -1,34 +1,59 @@
 <template>
-    <div class="card-container">
+    <h3 class="text-center">Dynamic Styling (Class) Mode : Composition</h3>
+
+    <div class="container">
         <div
-            class="card"
-            :style="{ backgroundColor: color1 }"
-            @click="toggleColor1"
+            class="row row-cols-1 row-cols-md-3 g-4 m-3 justify-content-center"
         >
-            Carte 1
-        </div>
-        <div
-            class="card"
-            :style="{ backgroundColor: color2 }"
-            @click="toggleColor2"
-        >
-            Carte 2
+            <div class="col">
+                <div
+                    class="card"
+                    @click="selectionCard(1)"
+                    :class="{ class1: selectCard1 }"
+                >
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div
+                    class="card"
+                    @click="selectionCard(2)"
+                    :class="{ class2: selectCard2 }"
+                >
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <script setup lang="js">
-import { ref } from 'vue'; // Importer la fonction ref
-const color1 = ref('blue');
-const color2 = ref('pink');
-const initialColor1 = ref('blue');
-const initialColor2 = ref('pink');
+import { ref } from 'vue'
 
-function toggleColor1() {
-  color1.value = color1.value === 'blue' ? 'red' : initialColor1.value;
-}
+const selectCard1 = ref(false);
+const selectCard2 = ref(false);
 
-function toggleColor2() {
-  color2.value = color2.value === 'pink' ? 'green' : initialColor2.value;
+function selectionCard(uneCard) {
+  if (uneCard === 1) {
+    selectCard1.value = !selectCard1.value;
+  }
+  if (uneCard === 2) {
+    selectCard2.value = !selectCard2.value;
+  }
 }
 </script>
+
+<style scoped lang="css">
+.class1 {
+    background-color: mediumslateblue;
+    font-style: italic;
+}
+.class2 {
+    background-color: chartreuse;
+    font-size: large;
+}
+</style>

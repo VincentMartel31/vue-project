@@ -52,6 +52,11 @@ const router = createRouter({
             name: "dynamicstyling",
             component: () => import("../views/exo/dynamicstyling.vue"),
         },
+        {
+            path: "/tp_dynamicstyling",
+            name: "tp_dynamicstyling",
+            component: () => import("../views/tp/tp_dynamicstyling.vue"),
+        },
     ],
 });
 

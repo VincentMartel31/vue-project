@@ -276,8 +276,10 @@
                                 >
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#"
-                                    >TP-Dynamic Styling</a
+                                <router-link
+                                    class="dropdown-item"
+                                    to="/tp_dynamicstyling"
+                                    >TP-DynamicStyling</router-link
                                 >
                             </li>
                             <li>
