@@ -15,11 +15,27 @@ const router = createRouter({
             name: "NotFound",
             component: () => import("../views/NotFoundView.vue"),
         },
+        {
+            path: "/exobug",
+            name: "exobug",
+            component: () => import("../views/exo/exobug.vue"),
+        },
 
         {
             path: "/textinterpolation",
-            name: "NotFound",
+            name: "Ntextinterpolation",
             component: () => import("../views/lessons/textinterpolation.vue"),
+        },
+        {
+            path: "/vmodel",
+            name: "vmodel",
+            component: () => import("../views/lessons/vmodel.vue"),
+        },
+
+        {
+            path: "/tpeventbinding",
+            name: "Ntpeventbinding",
+            component: () => import("../views/tp/tpeventbinding.vue"),
         },
     ],
 });

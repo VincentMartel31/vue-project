@@ -11,6 +11,8 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -27,14 +29,12 @@ body {
     display: flex;
     place-items: center;
     min-width: 320px;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 h1 {
     font-size: 3.2em;
     line-height: 1.1;
-    text-align: center;
-    color: rgb(120, 113, 179);
 }
 
 button {
@@ -61,9 +61,9 @@ button:focus-visible {
 }
 
 #app {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
     text-align: center;
 }
 

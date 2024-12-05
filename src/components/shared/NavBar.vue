@@ -158,6 +158,11 @@
                                 >
                             </li>
                             <li>
+                                <router-link class="dropdown-item" to="/exobug"
+                                    >exo bug</router-link
+                                >
+                            </li>
+                            <li>
                                 <router-link
                                     class="dropdown-item"
                                     to="/Lesson_inline-templating"
@@ -245,8 +250,10 @@
                                 >
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#"
-                                    >TP-EventBinding</a
+                                <router-link
+                                    class="dropdown-item"
+                                    to="/tpeventbinding"
+                                    >TP-EventBinding</router-link
                                 >
                             </li>
                             <li>
