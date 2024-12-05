@@ -1,59 +1,73 @@
 <template>
-    <div class="container mt-5">
-        <input
-            @keyup="handleInputChange"
-            :class="{ classes }"
-            type="text"
-            placeholder="Tapez ici"
-        />
-        <p>{{ uneString }}</p>
-
-        <input
-            v-on:keyup.esc="handleEscKeyPress"
-            type="text"
-            placeholder="Appuyez sur Échap pour effacer"
-        />
-        <p>{{ uneAutre }}</p>
-
-        <button
-            v-on:click="toggleParagraph"
-            type="button"
-            class="btn btn-success"
-        >
-            {{ showParagraph ? "Masquer" : "Afficher" }}
-        </button>
+    <div class="bg-primary-subtle p-5">
+        <h1 class="text-center">TP:Dynamic Styling Mode : Composition</h1>
+        <div class="container">
+            <div class="m-3">
+                <div>
+                    <input
+                        v-model="nomClasse"
+                        type="text"
+                        class="form-control"
+                    />
+                    <!-- <h1 :class="{maClasseHello: nomClasse==='hello' }"  class="form-label mt-1">Hello World (class dynamique)</h1> -->
+                    <!-- version en passant par une fonction computed -->
+                    <h1 :class="classDynamique" class="form-label mt-1">
+                        Hello World (class dynamique)
+                    </h1>
+                </div>
+                <div class="mb-3">
+                    <input
+                        v-model="laCouleur"
+                        type="text"
+                        class="form-control"
+                    />
+                    <h1
+                        :style="{ backgroundColor: laCouleur }"
+                        class="form-label mt-1"
+                    >
+                        Hello World (couleur dynamique)
+                    </h1>
+                </div>
+                <div class="mb-3 form-check"></div>
+                <button @click="affichage" class="btn btn-primary">
+                    Afficher 1er Titre
+                </button>
+            </div>
+        </div>
     </div>
 </template>
 
-<script setup>
-import { ref, computed } from "vue";
+<script setup lang="js">
+import { ref, computed } from 'vue';
 
-const classes = computed(() => ({
-    maClasseHello: uneString.value === "hello",
-    maClasseWorld: uneString.value === "world",
-}));
-const uneString = ref("");
-const uneAutre = ref("");
-const showParagraph = ref(true);
+// Variables réactives
+const nomClasse = ref('');
+const laCouleur = ref('');
+const visible = ref(true);
 
-function handleInputChange(event) {
-    uneString.value = event.target.value;
-}
+// Propriété calculée
+const classDynamique = computed(() => {
+  const classes = {};
 
-function handleEscKeyPress() {
-    uneString.value = "";
-}
+  if (nomClasse.value === 'hello') {
+    classes.maClasseHello = true;
+  }
 
-function toggleParagraph() {
-    showParagraph.value = !showParagraph.value;
+  if (nomClasse.value === 'world') {
+    classes.maClasseWorld = true;
+  }
+
+  if (!visible.value) {
+    classes.maClasseHidden = true;
+  } else {
+    classes.maClasseVisible = true;
+  }
+
+  return classes;
+});
+
+// Méthode
+function affichage() {
+  visible.value = !visible.value;
 }
 </script>
-
-<style>
-.maClasseHello {
-    background-color: aqua;
-}
-.maClasseWorld {
-    background-color: coral;
-}
-</style>
