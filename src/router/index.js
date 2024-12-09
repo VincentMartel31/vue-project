@@ -67,6 +67,11 @@ const router = createRouter({
             name: "exo_listrendering",
             component: () => import("../views/exo/exo_listrendering.vue"),
         },
+        {
+            path: "/exo_listecourses",
+            name: "exo_listecourses",
+            component: () => import("../views/exo/exo_listecourses.vue"),
+        },
     ],
 });
 

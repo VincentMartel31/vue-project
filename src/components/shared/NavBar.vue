@@ -191,6 +191,13 @@
                             <li>
                                 <router-link
                                     class="dropdown-item"
+                                    to="/exo_listecourses"
+                                    >Liste courses
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link
+                                    class="dropdown-item"
                                     to="/AttributeBinding"
                                     >Attribute Binding (v-bind)</router-link
                                 >
