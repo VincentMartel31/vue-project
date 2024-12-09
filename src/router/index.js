@@ -57,6 +57,16 @@ const router = createRouter({
             name: "tp_dynamicstyling",
             component: () => import("../views/tp/tp_dynamicstyling.vue"),
         },
+        {
+            path: "/LessonListRendering",
+            name: "LessonListRendering",
+            component: () => import("../views/lessons/LessonListRendering.vue"),
+        },
+        {
+            path: "/exo_listrendering",
+            name: "exo_listrendering",
+            component: () => import("../views/exo/exo_listrendering.vue"),
+        },
     ],
 });
 

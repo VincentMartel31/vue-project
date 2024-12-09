@@ -58,6 +58,13 @@
                                 >
                             </li>
                             <li>
+                                <router-link
+                                    class="dropdown-item"
+                                    to="/LessonListRendering"
+                                    >List rendering</router-link
+                                >
+                            </li>
+                            <li>
                                 <a class="dropdown-item" href="#"
                                     >introduction Vue</a
                                 >
@@ -172,6 +179,13 @@
                                     class="dropdown-item"
                                     to="/Lesson_inline-templating"
                                     >inline Templating(v-html)
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link
+                                    class="dropdown-item"
+                                    to="/exo_listrendering"
+                                    >List Rendering
                                 </router-link>
                             </li>
                             <li>
