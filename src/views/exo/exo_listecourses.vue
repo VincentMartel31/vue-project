@@ -75,3 +75,31 @@ function masquerListe() {
     afficherListe.value = !afficherListe.value;
 }
 </script>
+
+<style scoped>
+/* Style basique pour rendre le formulaire plus lisible */
+div {
+    margin-bottom: 1em;
+}
+label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+input {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+button {
+    padding: 1em;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:disabled {
+    background-color: #ccc;
+}
+</style>

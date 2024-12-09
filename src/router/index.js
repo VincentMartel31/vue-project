@@ -72,6 +72,21 @@ const router = createRouter({
             name: "exo_listecourses",
             component: () => import("../views/exo/exo_listecourses.vue"),
         },
+        {
+            path: "/exoenplus",
+            name: "exoenplus",
+            component: () => import("../views/exo/exoenplus.vue"),
+        },
+        {
+            path: "/FriendList",
+            name: "FriendList",
+            component: () => import("../views/exo/FriendList.vue"),
+        },
+        {
+            path: "/PropsOneFriendComp",
+            name: "exoprops",
+            component: () => import("../views/exo/PropsOneFriendComp.vue"),
+        },
     ],
 });
 

@@ -198,8 +198,29 @@
                             <li>
                                 <router-link
                                     class="dropdown-item"
+                                    to="/exoenplus"
+                                    >exo en plus
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link
+                                    class="dropdown-item"
+                                    to="/FriendList"
+                                    >exo props
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link
+                                    class="dropdown-item"
                                     to="/AttributeBinding"
                                     >Attribute Binding (v-bind)</router-link
+                                >
+                            </li>
+                            <li>
+                                <router-link
+                                    class="dropdown-item"
+                                    to="/PropsOneFriendComp"
+                                    >exo props jeffstyle</router-link
                                 >
                             </li>
                             <li>
@@ -375,4 +396,80 @@ onBeforeUnmount(() => {
 });
 </script>
 
-<style scoped lang="css"></style>
+<style scoped lang="css">
+/* Changer la couleur de fond de la navbar */
+.navbar {
+    background-color: #1d6ebe !important; /* Gris foncé */
+    border-bottom: 2px solid #007bff; /* Ajout d'une bordure bleue en bas */
+}
+
+/* Effet de survol des liens */
+.navbar-nav .nav-link {
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: #7c3973; /* Bleu clair lors du survol */
+    background-color: rgba(
+        0,
+        123,
+        255,
+        0.1
+    ); /* Légère couleur de fond lors du survol */
+}
+
+/* Effet de survol pour les items du menu déroulant */
+.navbar-nav .dropdown-menu .dropdown-item:hover {
+    background-color: #7cb919; /* Changer la couleur de fond du dropdown lors du survol */
+    color: white; /* Text en blanc pour une meilleure lisibilité */
+}
+
+/* Personnaliser le bouton de la navbar pour plus de contraste */
+.navbar-toggler {
+    border-color: #007bff;
+}
+
+.navbar-toggler-icon {
+    background-color: #00ff2a; /* Couleur de l'icône de hamburger */
+}
+
+/* Personnaliser les liens de la navbar pour les rendre plus visibles */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.2rem; /* Augmenter légèrement la taille de la police */
+    color: white !important;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+    color: #91ebac !important; /* Couleur bleue sur hover */
+}
+
+/* Ajouter des marges pour les éléments de la navbar */
+.nav-item {
+    margin-right: 10px;
+}
+
+/* Modifier le fond de la navbar pour les petits écrans (mobile) */
+@media (max-width: 991px) {
+    .navbar {
+        background-color: #1c1f23 !important; /* Changer la couleur sur mobile */
+    }
+
+    .navbar-nav .nav-link {
+        color: white !important;
+    }
+}
+
+/* Personnaliser les liens de dropdown pour qu'ils soient plus spacieux */
+.dropdown-menu .dropdown-item {
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+/* Ajouter une bordure de séparation pour les sections dans le menu */
+.dropdown-menu {
+    border-top: 2px solid #007bff;
+}
+</style>
