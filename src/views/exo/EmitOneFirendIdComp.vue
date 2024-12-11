@@ -4,12 +4,30 @@
             <h2 class="list-group-item">
                 {{ unAmiName }} {{ premiumData ? "Ami premium" : "Ami nul" }}
             </h2>
-            <button @click="afficherPremium" class="btn btn-danger mb-1">
-                Premium ?
-            </button>
-            <button @click="afficherDetails" class="btn btn-outline-dark">
-                {{ detailsVisibles ? "Masquer" : "Afficher" }}
-            </button>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button
+                    @click="afficherDetails"
+                    type="button"
+                    class="m-1 btn btn-outline-secondary"
+                >
+                    👁 {{ detailsVisibles ? "Masquer" : "Afficher" }} Détails
+                </button>
+                <button
+                    @click="afficherPremium"
+                    type="button"
+                    class="m-1 btn btn-outline-success"
+                >
+                    ⭐️ Premium
+                </button>
+                <button
+                    @click="$emit('deleteFriend', id)"
+                    type="button"
+                    class="m-1 btn btn-outline-danger"
+                >
+                    🗑 Suppr.
+                </button>
+            </div>
+
             <ul v-if="detailsVisibles" class="list-group">
                 <li class="list-group-item">{{ unAmiPhone }}</li>
                 <li class="list-group-item">{{ unAmiMail }}</li>

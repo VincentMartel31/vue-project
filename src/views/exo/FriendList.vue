@@ -11,6 +11,7 @@
         :unAmiMail="unAmi.email"
         :premium="unAmi.premium"
         @mon-event-premium="reactionStatus"
+        @deleteFriend="effacerAmi"
     ></EmitOneFriendIdComp>
 </template>
 
@@ -30,7 +31,7 @@
         },
         {
             id: 'lasticot2',
-            name: 'COCO L ASTICOT',
+            name: 'COCO L ASTICOsqdqsdT',
             phone: '01234 5678 991',
             email: 'coco@lasticot.com',
             premium: true
@@ -70,6 +71,16 @@ function ajouterAmi(ami) {
   };
   console.log(newAmiContact)
   lesAmis.value.push(newAmiContact);}
+  localStorage.setItem('lesAmis', JSON.stringify(lesAmis.value));
+  console.log("Tableau enregistré dans localStorage :", lesAmis.value);
+
+  function effacerAmi(unId){
+
+    const index = lesAmis.value.findIndex((ami) => ami.id === unId);
+    lesAmis.value.splice(index,1);
+    localStorage.setItem('lesAmis', JSON.stringify(lesAmis.value));
+
+  }
 </script>
 
 <style scoped>
