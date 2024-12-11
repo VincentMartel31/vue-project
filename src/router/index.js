@@ -87,6 +87,11 @@ const router = createRouter({
             name: "exoprops",
             component: () => import("../views/exo/PropsOneFriendComp.vue"),
         },
+        {
+            path: "/SignUp",
+            name: "SignUp",
+            component: () => import("../views/exo/SignUp.vue"),
+        },
     ],
 });
 
