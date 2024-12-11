@@ -1,4 +1,7 @@
 <template>
+    <NewFriend @add-ami="ajouterAmi" />
+    <ul class="list-group mt-4"></ul>
+
     <EmitOneFriendIdComp
         v-for="unAmi in lesAmis"
         :key="unAmi.id"
@@ -7,13 +10,15 @@
         :unAmiPhone="unAmi.phone"
         :unAmiMail="unAmi.email"
         :premium="unAmi.premium"
-        @mon-event-premium="reactionStatus(unAmi.id)"
+        @mon-event-premium="reactionStatus"
     ></EmitOneFriendIdComp>
 </template>
 
 <script setup lang="js">
     import { ref } from 'vue';
+    import NewFriend  from './../exo/NewFriend.vue';
     import EmitOneFriendIdComp from './../exo/EmitOneFirendIdComp.vue';
+
 
     const lesAmis = ref([
         {
@@ -52,7 +57,19 @@
         return element.id === leIdDansUnAmi;
     });
     console.log(found);
+
+
 }
+function ajouterAmi(ami) {
+  const newAmiContact = {
+    id: new Date().toISOString(), // Générer un faux id
+    name: ami.name,
+    phone: ami.phone,
+    email: ami.email,
+    premium: false,
+  };
+  console.log(newAmiContact)
+  lesAmis.value.push(newAmiContact);}
 </script>
 
 <style scoped>

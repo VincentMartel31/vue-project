@@ -46,7 +46,10 @@ const props = defineProps({
 });
 
 // Définition des événements émis
-const emit = defineEmits(['mon-event-premium']);
+const emit = defineEmits({
+    'mon-event-premium': (param) =>
+        param ? (console.log("l'id existe"), true) : (console.warn("erreur il manque un id"), false)
+});
 
 const detailsVisibles = ref(false);
 const premiumData = ref(props.premium);
@@ -57,6 +60,8 @@ function afficherDetails() {
 
 function afficherPremium() {
   premiumData.value = !premiumData.value;
-  emit('mon-event-premium',props.id);
+   //oups on a oublié de passé l'id dans l'event
+   emit('mon-event-premium');
+  //emit('mon-event-premium',props.id);
 }
 </script>
